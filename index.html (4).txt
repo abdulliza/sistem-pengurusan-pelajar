@@ -1,0 +1,1017 @@
+<!-- Navigation Tabs -->
+<nav class="bg-white shadow-sm border-b">
+    <div class="container mx-auto px-6">
+        <div class="flex space-x-8 overflow-x-auto">
+            <button onclick="showTab('dashboard')" class="tab-btn tab-active px-4 py-3 text-sm font-medium text-white rounded-t-lg whitespace-nowrap">
+                📊 Dashboard
+            </button>
+            <button onclick="showTab('attendance')" class="tab-btn px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                ✅ Attendance
+            </button>
+            <button onclick="showTab('marks')" class="tab-btn px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                📝 Marks & Grades
+            </button>
+            <button onclick="showTab('lessons')" class="tab-btn px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                📚 Lesson Plans
+            </button>
+            <button onclick="showTab('appointments')" class="tab-btn px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                📅 Appointments
+            </button>
+            <button onclick="showTab('assignments')" class="tab-btn px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                📋 Assignments
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto px-6 py-8">
+    <!-- Dashboard Tab -->
+    <div id="dashboard" class="tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Stats Cards -->
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Students</p>
+                        <p class="text-2xl font-bold text-gray-900">45</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <span class="text-xl">👥</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Avg Attendance</p>
+                        <p class="text-2xl font-bold text-green-600">87%</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <span class="text-xl">✅</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Pending Assignments</p>
+                        <p class="text-2xl font-bold text-orange-600">12</p>
+                    </div>
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <span class="text-xl">📋</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Consultations</p>
+                        <p class="text-2xl font-bold text-purple-600">8</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <span class="text-xl">📅</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activities & Alerts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">⚠️ Attendance Warnings</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                        <div>
+                            <p class="font-medium text-red-900">John Smith</p>
+                            <p class="text-sm text-red-600">Attendance: 65% (Below 75%)</p>
+                        </div>
+                        <button onclick="sendWarning('John Smith')" class="px-3 py-1 bg-red-600 text-white text-xs rounded-lg hover:bg-red-700">
+                            Send Warning
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                        <div>
+                            <p class="font-medium text-red-900">Sarah Johnson</p>
+                            <p class="text-sm text-red-600">Attendance: 70% (Below 75%)</p>
+                        </div>
+                        <button onclick="sendWarning('Sarah Johnson')" class="px-3 py-1 bg-red-600 text-white text-xs rounded-lg hover:bg-red-700">
+                            Send Warning
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📈 Syllabus Progress</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Mathematics 101</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Physics 201</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-600 h-2 rounded-full progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Chemistry 301</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-600 h-2 rounded-full progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendance Tab -->
+    <div id="attendance" class="tab-content hidden">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-900">📅 Attendance Management</h2>
+                <div class="flex space-x-3">
+                    <input type="date" id="attendanceDate" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <button onclick="exportAttendance()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center space-x-2">
+                        <span>📊</span>
+                        <span>Export to Excel</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-200">
+                            <th class="text-left py-3 px-4 font-medium text-gray-900">Student Name</th>
+                            <th class="text-left py-3 px-4 font-medium text-gray-900">Student ID</th>
+                            <th class="text-center py-3 px-4 font-medium text-gray-900">Attendance</th>
+                            <th class="text-center py-3 px-4 font-medium text-gray-900">Attendance Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTable">
+                        <!-- Attendance rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marks Tab -->
+    <div id="marks" class="tab-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Marks Input -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📝 Input Marks</h3>
+                <form onsubmit="addMarks(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Student</label>
+                        <select id="studentSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select Student</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Quiz (30%)</label>
+                            <input type="number" id="quizMark" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Assignment (30%)</label>
+                            <input type="number" id="assignmentMark" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Test (40%)</label>
+                            <input type="number" id="testMark" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Calculate & Save Marks
+                    </button>
+                </form>
+            </div>
+
+            <!-- Marks Display -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">📊 Final Marks</h3>
+                    <button onclick="exportMarks()" class="px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm">
+                        Export Excel
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-2 font-medium text-gray-900">Student</th>
+                                <th class="text-center py-2 font-medium text-gray-900">Carry</th>
+                                <th class="text-center py-2 font-medium text-gray-900">Final</th>
+                                <th class="text-center py-2 font-medium text-gray-900">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="marksTable">
+                            <!-- Marks will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lesson Plans Tab -->
+    <div id="lessons" class="tab-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Add Lesson Plan -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📚 Add Lesson Plan</h3>
+                <form onsubmit="addLessonPlan(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Week</label>
+                        <input type="number" id="lessonWeek" min="1" max="16" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                        <input type="text" id="lessonTopic" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                        <textarea id="lessonDescription" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Learning Objectives</label>
+                        <textarea id="lessonObjectives" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Add Lesson Plan
+                    </button>
+                </form>
+            </div>
+
+            <!-- Lesson Plans List -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">📅 Weekly Lesson Plans</h3>
+                    <button onclick="generateTeachingReport()" class="px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-sm">
+                        Generate Report
+                    </button>
+                </div>
+                <div id="lessonPlansList" class="space-y-4 max-h-96 overflow-y-auto">
+                    <!-- Lesson plans will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointments Tab -->
+    <div id="appointments" class="tab-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Booking System -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📅 Book Consultation</h3>
+                <form onsubmit="bookAppointment(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Student Name</label>
+                        <input type="text" id="appointmentStudent" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                        <input type="date" id="appointmentDate" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Time Slot</label>
+                        <select id="appointmentTime" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Purpose</label>
+                        <textarea id="appointmentPurpose" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Book Appointment
+                    </button>
+                </form>
+            </div>
+
+            <!-- Appointments List -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">📋 Upcoming Appointments</h3>
+                    <button onclick="generateConsultationReport()" class="px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm">
+                        Monthly Report
+                    </button>
+                </div>
+                <div id="appointmentsList" class="space-y-3 max-h-96 overflow-y-auto">
+                    <!-- Appointments will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignments Tab -->
+    <div id="assignments" class="tab-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Add Assignment -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📝 Create Assignment</h3>
+                <form onsubmit="addAssignment(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Assignment Title</label>
+                        <input type="text" id="assignmentTitle" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                        <textarea id="assignmentDesc" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Due Date</label>
+                        <input type="datetime-local" id="assignmentDue" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Grace Period (hours)</label>
+                        <input type="number" id="gracePeriod" min="0" max="72" value="24" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Create Assignment
+                    </button>
+                </form>
+            </div>
+
+            <!-- Assignments List -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">📋 Assignment Tracker</h3>
+                <div id="assignmentsList" class="space-y-4 max-h-96 overflow-y-auto">
+                    <!-- Assignments will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Sample data
+    let students = [
+        { id: 'S001', name: 'Alice Johnson', attendance: [], marks: {} },
+        { id: 'S002', name: 'Bob Smith', attendance: [], marks: {} },
+        { id: 'S003', name: 'Carol Davis', attendance: [], marks: {} },
+        { id: 'S004', name: 'David Wilson', attendance: [], marks: {} },
+        { id: 'S005', name: 'Emma Brown', attendance: [], marks: {} },
+        { id: 'S006', name: 'Frank Miller', attendance: [], marks: {} },
+        { id: 'S007', name: 'Grace Lee', attendance: [], marks: {} },
+        { id: 'S008', name: 'Henry Taylor', attendance: [], marks: {} },
+        { id: 'S009', name: 'Ivy Chen', attendance: [], marks: {} },
+        { id: 'S010', name: 'Jack Anderson', attendance: [], marks: {} }
+    ];
+
+    let lessonPlans = [];
+    let appointments = [];
+    let assignments = [];
+
+    // Initialize the application
+    function init() {
+        populateStudentSelect();
+        renderAttendanceTable();
+        renderMarksTable();
+        setTodayDate();
+        
+        // Generate some sample attendance data
+        generateSampleAttendance();
+        renderAttendanceTable();
+    }
+
+    // Tab functionality
+    function showTab(tabName) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.add('hidden');
+        });
+        
+        // Remove active class from all tab buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('tab-active', 'text-white');
+            btn.classList.add('text-gray-600');
+        });
+        
+        // Show selected tab
+        document.getElementById(tabName).classList.remove('hidden');
+        
+        // Add active class to clicked button
+        event.target.classList.add('tab-active', 'text-white');
+        event.target.classList.remove('text-gray-600');
+    }
+
+    // Set today's date as default
+    function setTodayDate() {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('attendanceDate').value = today;
+    }
+
+    // Populate student select dropdown
+    function populateStudentSelect() {
+        const select = document.getElementById('studentSelect');
+        students.forEach(student => {
+            const option = document.createElement('option');
+            option.value = student.id;
+            option.textContent = `${student.name} (${student.id})`;
+            select.appendChild(option);
+        });
+    }
+
+    // Generate sample attendance data
+    function generateSampleAttendance() {
+        const statuses = ['Present', 'Absent', 'Excused'];
+        students.forEach(student => {
+            // Generate 20 days of attendance
+            for (let i = 0; i < 20; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                const status = statuses[Math.floor(Math.random() * statuses.length)];
+                student.attendance.push({
+                    date: date.toISOString().split('T')[0],
+                    status: status
+                });
+            }
+        });
+    }
+
+    // Render attendance table
+    function renderAttendanceTable() {
+        const tbody = document.getElementById('attendanceTable');
+        tbody.innerHTML = '';
+
+        students.forEach(student => {
+            const row = document.createElement('tr');
+            row.className = 'border-b border-gray-100 hover:bg-gray-50';
+
+            const presentCount = student.attendance.filter(a => a.status === 'Present').length;
+            const totalCount = student.attendance.length;
+            const attendanceRate = totalCount > 0 ? Math.round((presentCount / totalCount) * 100) : 0;
+
+            row.innerHTML = `
+                <td class="py-3 px-4 font-medium text-gray-900">${student.name}</td>
+                <td class="py-3 px-4 text-gray-600">${student.id}</td>
+                <td class="py-3 px-4 text-center">
+                    <div class="flex justify-center space-x-2">
+                        <button onclick="markAttendance('${student.id}', 'Present')" 
+                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs hover:bg-green-200">
+                            Present
+                        </button>
+                        <button onclick="markAttendance('${student.id}', 'Absent')" 
+                                class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs hover:bg-red-200">
+                            Absent
+                        </button>
+                        <button onclick="markAttendance('${student.id}', 'Excused')" 
+                                class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs hover:bg-yellow-200">
+                            Excused
+                        </button>
+                    </div>
+                </td>
+                <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center">
+                        <span class="text-sm font-medium ${attendanceRate < 75 ? 'text-red-600' : 'text-green-600'}">
+                            ${attendanceRate}%
+                        </span>
+                        ${attendanceRate < 75 ? '<span class="ml-2 text-red-500">⚠️</span>' : ''}
+                    </div>
+                </td>
+            `;
+
+            tbody.appendChild(row);
+        });
+    }
+
+    // Mark attendance
+    function markAttendance(studentId, status) {
+        const date = document.getElementById('attendanceDate').value;
+        const student = students.find(s => s.id === studentId);
+        
+        if (student) {
+            // Remove existing attendance for this date
+            student.attendance = student.attendance.filter(a => a.date !== date);
+            
+            // Add new attendance record
+            student.attendance.push({ date, status });
+            
+            // Show success message
+            showNotification(`Marked ${student.name} as ${status} for ${date}`, 'success');
+            
+            // Re-render table
+            renderAttendanceTable();
+        }
+    }
+
+    // Add marks
+    function addMarks(event) {
+        event.preventDefault();
+        
+        const studentId = document.getElementById('studentSelect').value;
+        const quiz = parseFloat(document.getElementById('quizMark').value) || 0;
+        const assignment = parseFloat(document.getElementById('assignmentMark').value) || 0;
+        const test = parseFloat(document.getElementById('testMark').value) || 0;
+        
+        if (!studentId) {
+            showNotification('Please select a student', 'error');
+            return;
+        }
+        
+        const student = students.find(s => s.id === studentId);
+        if (student) {
+            // Calculate carry marks (weighted average)
+            const carryMarks = (quiz * 0.3) + (assignment * 0.3) + (test * 0.4);
+            
+            student.marks = {
+                quiz,
+                assignment,
+                test,
+                carry: Math.round(carryMarks * 100) / 100,
+                final: Math.round(carryMarks * 100) / 100 // For now, final = carry
+            };
+            
+            showNotification(`Marks added for ${student.name}. Carry marks: ${student.marks.carry}%`, 'success');
+            
+            // Clear form
+            document.getElementById('studentSelect').value = '';
+            document.getElementById('quizMark').value = '';
+            document.getElementById('assignmentMark').value = '';
+            document.getElementById('testMark').value = '';
+            
+            renderMarksTable();
+        }
+    }
+
+    // Render marks table
+    function renderMarksTable() {
+        const tbody = document.getElementById('marksTable');
+        tbody.innerHTML = '';
+
+        students.forEach(student => {
+            if (student.marks.carry !== undefined) {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-100';
+
+                const grade = getGrade(student.marks.final);
+
+                row.innerHTML = `
+                    <td class="py-2 text-sm font-medium text-gray-900">${student.name}</td>
+                    <td class="py-2 text-center text-sm text-gray-600">${student.marks.carry}%</td>
+                    <td class="py-2 text-center text-sm font-medium text-gray-900">${student.marks.final}%</td>
+                    <td class="py-2 text-center">
+                        <span class="px-2 py-1 text-xs font-medium rounded-full ${getGradeColor(grade)}">
+                            ${grade}
+                        </span>
+                    </td>
+                `;
+
+                tbody.appendChild(row);
+            }
+        });
+    }
+
+    // Get grade based on marks
+    function getGrade(marks) {
+        if (marks >= 90) return 'A+';
+        if (marks >= 80) return 'A';
+        if (marks >= 70) return 'B';
+        if (marks >= 60) return 'C';
+        if (marks >= 50) return 'D';
+        return 'F';
+    }
+
+    // Get grade color
+    function getGradeColor(grade) {
+        const colors = {
+            'A+': 'bg-green-100 text-green-800',
+            'A': 'bg-green-100 text-green-800',
+            'B': 'bg-blue-100 text-blue-800',
+            'C': 'bg-yellow-100 text-yellow-800',
+            'D': 'bg-orange-100 text-orange-800',
+            'F': 'bg-red-100 text-red-800'
+        };
+        return colors[grade] || 'bg-gray-100 text-gray-800';
+    }
+
+    // Add lesson plan
+    function addLessonPlan(event) {
+        event.preventDefault();
+        
+        const week = document.getElementById('lessonWeek').value;
+        const topic = document.getElementById('lessonTopic').value;
+        const description = document.getElementById('lessonDescription').value;
+        const objectives = document.getElementById('lessonObjectives').value;
+        
+        const lessonPlan = {
+            id: Date.now(),
+            week: parseInt(week),
+            topic,
+            description,
+            objectives,
+            completed: false,
+            materials: []
+        };
+        
+        lessonPlans.push(lessonPlan);
+        lessonPlans.sort((a, b) => a.week - b.week);
+        
+        showNotification(`Lesson plan for Week ${week} added successfully`, 'success');
+        
+        // Clear form
+        event.target.reset();
+        
+        renderLessonPlans();
+    }
+
+    // Render lesson plans
+    function renderLessonPlans() {
+        const container = document.getElementById('lessonPlansList');
+        container.innerHTML = '';
+
+        if (lessonPlans.length === 0) {
+            container.innerHTML = '<p class="text-gray-500 text-center py-8">No lesson plans added yet.</p>';
+            return;
+        }
+
+        lessonPlans.forEach(plan => {
+            const div = document.createElement('div');
+            div.className = 'border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow';
+
+            div.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-semibold text-gray-900">Week ${plan.week}: ${plan.topic}</h4>
+                    <div class="flex space-x-2">
+                        <button onclick="toggleLessonCompletion(${plan.id})" 
+                                class="px-2 py-1 text-xs rounded ${plan.completed ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}">
+                            ${plan.completed ? '✅ Completed' : '⏳ Pending'}
+                        </button>
+                        <button onclick="deleteLessonPlan(${plan.id})" 
+                                class="px-2 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200">
+                            🗑️ Delete
+                        </button>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">${plan.description}</p>
+                <p class="text-xs text-gray-500"><strong>Objectives:</strong> ${plan.objectives}</p>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    // Toggle lesson completion
+    function toggleLessonCompletion(id) {
+        const plan = lessonPlans.find(p => p.id === id);
+        if (plan) {
+            plan.completed = !plan.completed;
+            renderLessonPlans();
+            showNotification(`Lesson plan marked as ${plan.completed ? 'completed' : 'pending'}`, 'success');
+        }
+    }
+
+    // Delete lesson plan
+    function deleteLessonPlan(id) {
+        if (confirm('Are you sure you want to delete this lesson plan?')) {
+            lessonPlans = lessonPlans.filter(p => p.id !== id);
+            renderLessonPlans();
+            showNotification('Lesson plan deleted successfully', 'success');
+        }
+    }
+
+    // Book appointment
+    function bookAppointment(event) {
+        event.preventDefault();
+        
+        const student = document.getElementById('appointmentStudent').value;
+        const date = document.getElementById('appointmentDate').value;
+        const time = document.getElementById('appointmentTime').value;
+        const purpose = document.getElementById('appointmentPurpose').value;
+        
+        const appointment = {
+            id: Date.now(),
+            student,
+            date,
+            time,
+            purpose,
+            status: 'Scheduled',
+            reminder: true
+        };
+        
+        appointments.push(appointment);
+        appointments.sort((a, b) => new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time));
+        
+        showNotification(`Appointment booked for ${student} on ${date} at ${time}`, 'success');
+        
+        // Clear form
+        event.target.reset();
+        
+        renderAppointments();
+    }
+
+    // Render appointments
+    function renderAppointments() {
+        const container = document.getElementById('appointmentsList');
+        container.innerHTML = '';
+
+        if (appointments.length === 0) {
+            container.innerHTML = '<p class="text-gray-500 text-center py-8">No appointments scheduled.</p>';
+            return;
+        }
+
+        appointments.forEach(appointment => {
+            const div = document.createElement('div');
+            div.className = 'border border-gray-200 rounded-lg p-3 hover:shadow-md transition-shadow';
+
+            const appointmentDate = new Date(appointment.date + ' ' + appointment.time);
+            const isUpcoming = appointmentDate > new Date();
+
+            div.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-semibold text-gray-900">${appointment.student}</h4>
+                    <span class="px-2 py-1 text-xs rounded ${isUpcoming ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-600'}">
+                        ${appointment.status}
+                    </span>
+                </div>
+                <p class="text-sm text-gray-600 mb-1">📅 ${appointment.date} at ${appointment.time}</p>
+                <p class="text-xs text-gray-500">${appointment.purpose}</p>
+                <div class="mt-2 flex space-x-2">
+                    <button onclick="completeAppointment(${appointment.id})" 
+                            class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded hover:bg-green-200">
+                        ✅ Complete
+                    </button>
+                    <button onclick="cancelAppointment(${appointment.id})" 
+                            class="px-2 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200">
+                        ❌ Cancel
+                    </button>
+                </div>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    // Complete appointment
+    function completeAppointment(id) {
+        const appointment = appointments.find(a => a.id === id);
+        if (appointment) {
+            appointment.status = 'Completed';
+            renderAppointments();
+            showNotification('Appointment marked as completed', 'success');
+        }
+    }
+
+    // Cancel appointment
+    function cancelAppointment(id) {
+        if (confirm('Are you sure you want to cancel this appointment?')) {
+            appointments = appointments.filter(a => a.id !== id);
+            renderAppointments();
+            showNotification('Appointment cancelled successfully', 'success');
+        }
+    }
+
+    // Add assignment
+    function addAssignment(event) {
+        event.preventDefault();
+        
+        const title = document.getElementById('assignmentTitle').value;
+        const description = document.getElementById('assignmentDesc').value;
+        const dueDate = document.getElementById('assignmentDue').value;
+        const gracePeriod = parseInt(document.getElementById('gracePeriod').value) || 24;
+        
+        const assignment = {
+            id: Date.now(),
+            title,
+            description,
+            dueDate: new Date(dueDate),
+            gracePeriod,
+            submissions: students.map(student => ({
+                studentId: student.id,
+                studentName: student.name,
+                status: 'Not Submitted',
+                submittedAt: null,
+                plagiarismChecked: false
+            }))
+        };
+        
+        assignments.push(assignment);
+        assignments.sort((a, b) => a.dueDate - b.dueDate);
+        
+        showNotification(`Assignment "${title}" created successfully`, 'success');
+        
+        // Clear form
+        event.target.reset();
+        
+        renderAssignments();
+    }
+
+    // Render assignments
+    function renderAssignments() {
+        const container = document.getElementById('assignmentsList');
+        container.innerHTML = '';
+
+        if (assignments.length === 0) {
+            container.innerHTML = '<p class="text-gray-500 text-center py-8">No assignments created yet.</p>';
+            return;
+        }
+
+        assignments.forEach(assignment => {
+            const div = document.createElement('div');
+            div.className = 'border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow';
+
+            const now = new Date();
+            const isOverdue = now > assignment.dueDate;
+            const timeLeft = assignment.dueDate - now;
+            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+
+            const submittedCount = assignment.submissions.filter(s => s.status === 'Submitted').length;
+            const totalStudents = assignment.submissions.length;
+
+            div.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-semibold text-gray-900">${assignment.title}</h4>
+                    <span class="px-2 py-1 text-xs rounded ${isOverdue ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}">
+                        ${isOverdue ? '⏰ Overdue' : `📅 ${daysLeft} days left`}
+                    </span>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">${assignment.description}</p>
+                <p class="text-xs text-gray-500 mb-3">Due: ${assignment.dueDate.toLocaleString()}</p>
+                
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-sm font-medium">Submissions: ${submittedCount}/${totalStudents}</span>
+                    <div class="w-32 bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: ${(submittedCount/totalStudents)*100}%"></div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <button onclick="viewSubmissions(${assignment.id})" 
+                            class="px-3 py-1 text-xs bg-blue-100 text-blue-800 rounded hover:bg-blue-200">
+                        📋 View Submissions
+                    </button>
+                    <button onclick="checkPlagiarism(${assignment.id})" 
+                            class="px-3 py-1 text-xs bg-yellow-100 text-yellow-800 rounded hover:bg-yellow-200">
+                        🔍 Check Plagiarism
+                    </button>
+                    <button onclick="deleteAssignment(${assignment.id})" 
+                            class="px-3 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200">
+                        🗑️ Delete
+                    </button>
+                </div>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    // View submissions (simplified)
+    function viewSubmissions(id) {
+        const assignment = assignments.find(a => a.id === id);
+        if (assignment) {
+            const submissionDetails = assignment.submissions.map(s => 
+                `${s.studentName}: ${s.status}`
+            ).join('\n');
+            
+            alert(`Submissions for "${assignment.title}":\n\n${submissionDetails}`);
+        }
+    }
+
+    // Check plagiarism (demo)
+    function checkPlagiarism(id) {
+        const assignment = assignments.find(a => a.id === id);
+        if (assignment) {
+            // Simulate plagiarism check
+            assignment.submissions.forEach(submission => {
+                submission.plagiarismChecked = true;
+            });
+            
+            showNotification('Plagiarism check completed for all submissions', 'success');
+        }
+    }
+
+    // Delete assignment
+    function deleteAssignment(id) {
+        if (confirm('Are you sure you want to delete this assignment?')) {
+            assignments = assignments.filter(a => a.id !== id);
+            renderAssignments();
+            showNotification('Assignment deleted successfully', 'success');
+        }
+    }
+
+    // Export functions
+    function exportAttendance() {
+        const data = students.map(student => {
+            const presentCount = student.attendance.filter(a => a.status === 'Present').length;
+            const totalCount = student.attendance.length;
+            const attendanceRate = totalCount > 0 ? Math.round((presentCount / totalCount) * 100) : 0;
+            
+            return {
+                'Student Name': student.name,
+                'Student ID': student.id,
+                'Total Classes': totalCount,
+                'Present': presentCount,
+                'Absent': student.attendance.filter(a => a.status === 'Absent').length,
+                'Excused': student.attendance.filter(a => a.status === 'Excused').length,
+                'Attendance Rate (%)': attendanceRate,
+                'Warning': attendanceRate < 75 ? 'Yes' : 'No'
+            };
+        });
+        
+        exportToExcel(data, 'Attendance_Report');
+    }
+
+    function exportMarks() {
+        const data = students.filter(s => s.marks.carry !== undefined).map(student => ({
+            'Student Name': student.name,
+            'Student ID': student.id,
+            'Quiz (30%)': student.marks.quiz,
+            'Assignment (30%)': student.marks.assignment,
+            'Test (40%)': student.marks.test,
+            'Carry Marks': student.marks.carry,
+            'Final Marks': student.marks.final,
+            'Grade': getGrade(student.marks.final)
+        }));
+        
+        exportToExcel(data, 'Marks_Report');
+    }
+
+    function exportToExcel(data, filename) {
+        const ws = XLSX.utils.json_to_sheet(data);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        XLSX.writeFile(wb, `${filename}_${new Date().toISOString().split('T')[0]}.xlsx`);
+        
+        showNotification(`${filename} exported successfully!`, 'success');
+    }
+
+    // Generate reports
+    function generateTeachingReport() {
+        const completedLessons = lessonPlans.filter(p => p.completed).length;
+        const totalLessons = lessonPlans.length;
+        const completionRate = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+        
+        const report = `Teaching Report - ${new Date().toLocaleDateString()}
+        
+Total Lesson Plans: ${totalLessons}
+Completed Lessons: ${completedLessons}
+Completion Rate: ${completionRate}%
+Recent Lessons:
+${lessonPlans.slice(-5).map(p => Week ${p.week}: ${p.topic} (${p.completed ? 'Completed' : 'Pending'})).join('\n')}`;
+        alert(report);
+    }
+
+    function generateConsultationReport() {
+        const completedAppointments = appointments.filter(a => a.status === 'Completed').length;
+        const totalAppointments = appointments.length;
+        
+        const report = `Monthly Consultation Report - ${new Date().toLocaleDateString()}
+        
+Total Appointments: ${totalAppointments}
+Completed Consultations: ${completedAppointments}
+Pending/Scheduled: ${totalAppointments - completedAppointments}
+Recent Consultations:
+${appointments.slice(-5).map(a => ${a.student} - ${a.date} (${a.status})).join('\n')}`;
+        alert(report);
+    }
+
+    // Send warning
+    function sendWarning(studentName) {
+        showNotification(`Warning notification sent to ${studentName} and their parents`, 'success');
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 ${
+            type === 'success' ? 'bg-green-500 text-white' :
+            type === 'error' ? 'bg-red-500 text-white' :
+            'bg-blue-500 text-white'
+        }`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+
+    // Initialize the application when page loads
+    document.addEventListener('DOMContentLoaded', init);
+</script>
